@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Dhavala Siri 2025–26 | Sri Dhavala College</title>
+    <meta name="description"
+        content="Dhavala Siri — the cultural and creative fest of Sri Dhavala College, Moodabidri." />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="fire-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand" data-page="home" style="cursor:none">
+            <div class="nav-flame-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="color:#FFB300;width:22px;height:22px;position:relative;z-index:1">
+                    <path
+                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                </svg>
+            </div>
+            <div class="nav-wordmark">
+                <span class="nav-wordmark-main">Dhavala Siri</span>
+                <span class="nav-wordmark-sub">Sri Dhavala College · 2025–26</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="events">Events</a></li>
+            <li><a href="#" data-page="about-fest">About Fest</a></li>
+            <li><a href="#" data-page="about-college">College</a></li>
+            <li><a href="#" data-page="general-rules">Rules</a></li>
+            <li><a href="#" data-page="location">Location</a></li>
+            <li><a href="#" data-page="contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="events">Events</a>
+        <a href="#" data-page="about-fest">About Fest</a>
+        <a href="#" data-page="about-college">About College</a>
+        <a href="#" data-page="general-rules">General Rules</a>
+        <a href="#" data-page="location">Location</a>
+        <a href="#" data-page="contact">Contact</a>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-top-bar"></div>
+            <div class="modal-header">
+                <div class="modal-title" id="modal-title"></div>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ═══ PAGE: HOME ═══ -->
+    <div class="page" id="home">
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <div class="hero-eyebrow-dot"></div>Sri Dhavala College Presents<div class="hero-eyebrow-dot"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-main">Dhavala Siri</span>
+                    <span class="hero-title-sub">Cultural &amp; Creative Fest · 2025–26</span>
+                </h1>
+                <p class="hero-tagline">A vibrant celebration of talent, creativity, and culture among Mangalore
+                    University's
+                    finest degree and postgraduate students.</p>
+                <div class="hero-pills">
+                    <div class="hero-pill">📅 <strong>Date TBA — 2026</strong></div>
+                    <div class="hero-pill">📍 <strong>Sri Dhavala College, Moodabidri</strong></div>
+                    <div class="hero-pill">🎓 <strong>Mangalore University</strong></div>
+                    <div class="hero-pill">🆓 <strong>Free Entry</strong></div>
+                </div>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" data-page="events">🎭 <span>Explore Events</span></button>
+                    <button class="btn btn-ghost" data-page="general-rules">📋 <span>View Rules</span></button>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-indicator-line"></div><span>Scroll</span>
+            </div>
+        </section>
+
+        <div class="countdown-section">
+            <div class="countdown-inner">
+                <div class="countdown-label">Registration Deadline Countdown</div>
+                <div class="countdown-grid">
+                    <div class="countdown-unit">
+                        <div class="countdown-num" id="cd-days">--</div><span class="countdown-unit-label">Days</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-num" id="cd-hours">--</div><span class="countdown-unit-label">Hours</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-num" id="cd-mins">--</div><span
+                            class="countdown-unit-label">Minutes</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-num" id="cd-secs">--</div><span
+                            class="countdown-unit-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section" style="padding-top:3rem;padding-bottom:2rem">
+            <div class="section-inner">
+                <div class="section-kicker">Fest Highlights</div>
+                <h2 class="section-heading">What Awaits You</h2>
+                <div class="ember-rule">
+                    <div class="r"></div>
+                    <div class="dot"></div>
+                    <div class="r"></div>
+                </div>
+                <div class="stats-belt reveal">
+                    <div class="stat-cell"><span class="stat-icon">🏆</span>
+                        <div class="stat-num">₹25K+</div>
+                        <div class="stat-lbl">Prize Pool</div>
+                    </div>
+                    <div class="stat-cell"><span class="stat-icon">🎭</span>
+                        <div class="stat-num">4</div>
+                        <div class="stat-lbl">Events</div>
+                    </div>
+                    <div class="stat-cell"><span class="stat-icon">👥</span>
+                        <div class="stat-num">16</div>
+                        <div class="stat-lbl">Max Team Size</div>
+                    </div>
+                    <div class="stat-cell"><span class="stat-icon">🆓</span>
+                        <div class="stat-num">₹0</div>
+                        <div class="stat-lbl">Entry Fee</div>
+                    </div>
+                    <div class="stat-cell"><span class="stat-icon">🍽️</span>
+                        <div class="stat-num">Free</div>
+                        <div class="stat-lbl">Meals</div>
+                    </div>
+                    <div class="stat-cell"><span class="stat-icon">🎓</span>
+                        <div class="stat-num">MU</div>
+                        <div class="stat-lbl">Affiliated</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+            <div class="section-inner">
+                <div class="section-kicker">Cultural Performance</div>
+                <h2 class="section-heading">Prize Money</h2>
+                <p class="section-body">Top performing teams compete for prestigious cash prizes and permanent trophies.
+                </p>
+                <div class="podium-wrap">
+                    <div class="podium-card p1 reveal reveal-l"><span class="podium-crown">🥇</span>
+                        <div class="podium-rank">First Prize</div>
+                        <div class="podium-amount">₹12,000</div>
+                        <div class="podium-desc">+ Permanent Trophy</div>
+                    </div>
+                    
+                    <div class="podium-card p2 reveal"><span class="podium-crown">🥈</span>
+                        <div class="podium-rank">Second Prize</div>
+                        <div class="podium-amount">₹8,000</div>
+                        <div class="podium-desc">+ Permanent Trophy</div>
+                    </div>
+                    
+                    <div class="podium-card p3 reveal reveal-ll"><span class="podium-crown">🥉</span>
+                        <div class="podium-rank">Third Prize</div>
+                        <div class="podium-amount">₹5,000</div>
+                        <div class="podium-desc">+ Permanent Trophy</div>
+                    </div>
+                </div>
+                <div class="special-awards reveal">
+                    <div class="special-award-pill">🌟 Best Individual Actor / Actress</div>
+                    <div class="special-award-pill">🎖️ Best Program Presentation</div>
+                    <div class="special-award-pill">🏆 Permanent Trophy for All Winners</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:1rem">
+            <div class="section-inner">
+                <div class="section-kicker">Competitions</div>
+                <h2 class="section-heading">Four Events. Infinite Glory.</h2>
+                <p class="section-body">Choose your arena — from the grand stage to the digital canvas.</p>
+                <div class="events-grid">
+                    <div class="event-card reveal">
+                        <div class="event-card-accent"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap fire">🎭</div><span class="event-card-tag">Group &amp;
+                                Individual</span>
+                            <div class="event-card-title">Cultural Performance</div>
+                            <p class="event-card-desc">Dance, mono acting, mime, mimicry, skits — showcase your art on
+                                the grandest
+                                stage. Cash prizes up to ₹12,000.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-primary btn-sm"
+                                data-event="cultural" style="width:100%">View Rules &amp; Details →</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-l">
+                        <div class="event-card-accent blue"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap blue">🧠</div><span class="event-card-tag blue">Team of
+                                2</span>
+                            <div class="event-card-title">Quiz Competition</div>
+                            <p class="event-card-desc">Battle of intellects! GK, current affairs, commerce, sports,
+                                history, science
+                                and technology.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm" data-event="quiz"
+                                style="width:100%;justify-content:center">View Rules &amp; Details →</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-ll">
+                        <div class="event-card-accent teal"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap teal">🎨</div><span
+                                class="event-card-tag teal">Individual</span>
+                            <div class="event-card-title">Rangoli Competition</div>
+                            <p class="event-card-desc">Create a stunning 3×3 ft free-hand rangoli in 2 hours. Judged on
+                                creativity,
+                                completeness and colour.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm"
+                                data-event="rangoli"
+                                style="width:100%;justify-content:center;color:#00E5CC;border-color:rgba(0,229,204,.3)">View
+                                Rules &amp;
+                                Details →</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-lll">
+                        <div class="event-card-accent purple"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap purple">📱</div><span class="event-card-tag purple">Solo or
+                                Duo</span>
+                            <div class="event-card-title">Instagram Reels</div>
+                            <p class="event-card-desc">Create a 30–60s original reel themed "Dhavala Siri" in 9:16
+                                format. Collaborate
+                                with @sri_dhavala_college_mdb.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm"
+                                data-event="reels"
+                                style="width:100%;justify-content:center;color:#CC44FF;border-color:rgba(204,68,255,.3)">View
+                                Rules
+                                &amp; Details →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:1rem">
+            <div class="section-inner">
+                <div class="reg-banner reveal">
+                    <div class="reg-banner-title">Register Before <span>01 April 2026</span></div>
+                    <div class="reg-banner-sub">Send your team details via Email or WhatsApp to the coordinators. All
+                        eligible
+                        colleges affiliated with Mangalore University are welcome.</div>
+                    <div class="reg-banner-cta">
+                        <button class="btn btn-primary" data-page="contact">📞 Contact Coordinators</button>
+                        <button class="btn btn-ghost" data-page="events">🎭 All Events</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: EVENTS ═══ -->
+    <div class="page" id="events">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">Dhavala Siri 2025–26</div>
+                <h1 class="page-hero-title">All Events</h1>
+                <p class="page-hero-desc">Four competitions, four arenas. Click any event to explore complete rules,
+                    evaluation
+                    criteria, prizes and coordinator details.</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="events-grid">
+                    <div class="event-card reveal">
+                        <div class="event-card-accent"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap fire">🎭</div><span class="event-card-tag">Group &amp;
+                                Individual</span>
+                            <div class="event-card-title">Cultural Performance</div>
+                            <p class="event-card-desc">The centrepiece of Dhavala Siri. Dance, mono acting, mime,
+                                mimicry, skits and
+                                more. Both individual and group categories. Compete for cash prizes up to ₹12,000 and a
+                                permanent
+                                trophy.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-primary btn-sm"
+                                data-event="cultural" style="width:100%">🔥 Full Rules &amp; Details</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-l">
+                        <div class="event-card-accent blue"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap blue">🧠</div><span class="event-card-tag blue">Team of
+                                2</span>
+                            <div class="event-card-title">Quiz Competition</div>
+                            <p class="event-card-desc">A fierce battle of intellects! Form a two-member team and test
+                                mastery across
+                                GK, current affairs, commerce, sports, history, science and technology.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm" data-event="quiz"
+                                style="width:100%;justify-content:center">🧠 Full Rules &amp; Details</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-ll">
+                        <div class="event-card-accent teal"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap teal">🎨</div><span
+                                class="event-card-tag teal">Individual</span>
+                            <div class="event-card-title">Rangoli Competition</div>
+                            <p class="event-card-desc">Express artistry through traditional rangoli. Create a stunning
+                                3×3 ft
+                                free-hand design in 2 hours. Bring your own materials. Judged on creativity,
+                                completeness and colour
+                                combination.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm"
+                                data-event="rangoli"
+                                style="width:100%;justify-content:center;color:#00E5CC;border-color:rgba(0,229,204,.3)">🎨
+                                Full Rules
+                                &amp; Details</button>
+                        </div>
+                    </div>
+                    <div class="event-card reveal reveal-lll">
+                        <div class="event-card-accent purple"></div>
+                        <div class="event-card-inner">
+                            <div class="event-card-icon-wrap purple">📱</div><span class="event-card-tag purple">Solo or
+                                Duo</span>
+                            <div class="event-card-title">Instagram Reels</div>
+                            <p class="event-card-desc">Create a 30–60 second original reel themed "Dhavala Siri" in 9:16
+                                format.
+                                Collaborate with @sri_dhavala_college_mdb on Instagram. Deadline: 3 PM on event day.</p>
+                        </div>
+                        <div class="event-card-footer">
+                            <div class="event-card-divider"></div><button class="btn btn-ghost btn-sm"
+                                data-event="reels"
+                                style="width:100%;justify-content:center;color:#CC44FF;border-color:rgba(204,68,255,.3)">📱
+                                Full Rules
+                                &amp; Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:2.5rem;background:rgba(255,109,0,.05);border:1px solid var(--border-dim);border-radius:var(--radius-md);padding:1.5rem 2rem;display:flex;gap:1rem;align-items:flex-start"
+                    class="reveal">
+                    <span style="font-size:1.3rem;margin-top:.05rem">📋</span>
+                    <div>
+                        <div
+                            style="font-family:'Cinzel',serif;color:var(--amber);margin-bottom:.4rem;font-size:.85rem;font-weight:700">
+                            Registration Deadline</div>
+                        <p style="color:var(--text-dim);font-size:.88rem;line-height:1.65">Teams must send participant
+                            names via
+                            <strong style="color:var(--text-bright)">Email or WhatsApp</strong> on or before <strong
+                                style="color:var(--amber)">01 April 2026</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: ABOUT FEST ═══ -->
+    <div class="page" id="about-fest">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">About the Fest</div>
+                <h1 class="page-hero-title">Dhavala Siri 2025–26</h1>
+                <p class="page-hero-desc">A vibrant platform for artistic abilities, intellectual skills, and innovative
+                    ideas
+                    among Mangalore University students.</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="about-layout">
+                    <div class="about-prose reveal">
+                        <p>Dhavala Siri 2025–26 is a vibrant cultural and creative fest that celebrates talent,
+                            creativity, and
+                            collaboration among college students. Organised by Sri Dhavala College, the fest brings
+                            together students
+                            from degree and postgraduate colleges affiliated with Mangalore University.</p>
+                        <p>The festival provides a platform for students to showcase their artistic abilities,
+                            intellectual skills,
+                            and innovative ideas through multiple events including cultural performances, quiz
+                            competitions, rangoli
+                            art, and social media creativity challenges. Each event encourages <strong>originality,
+                                teamwork, and
+                                creative expression</strong>.</p>
+                        <p>Participants compete in both individual and group categories, presenting performances such as
+                            dance, mono
+                            acting, mime, mimicry, and thematic skits. The fest also features intellectually stimulating
+                            quiz
+                            contests, traditional rangoli design competitions, and a modern Instagram Reels challenge.
+                        </p>
+                        <p>Dhavala Siri is not just a competition — it is a <strong>celebration of culture, talent, and
+                                youthful
+                                energy</strong>. Winners are recognised with cash prizes, trophies, and special awards
+                            for outstanding
+                            performances.</p>
+                        <p>Through this celebration of talent and culture, Dhavala Siri aims to inspire creativity,
+                            promote cultural
+                            appreciation, and provide a memorable experience for students from across the region.</p>
+                    </div>
+                    <div class="about-sidebar reveal reveal-l">
+                        <div class="about-stat-grid">
+                            <div class="about-stat">
+                                <div class="about-stat-val">4</div>
+                                <div class="about-stat-lbl">Competitions</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">₹0</div>
+                                <div class="about-stat-lbl">Entry Fee</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">MU</div>
+                                <div class="about-stat-lbl">University</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">2026</div>
+                                <div class="about-stat-lbl">Edition</div>
+                            </div>
+                        </div>
+                        <div class="about-panel">
+                            <div class="about-panel-title">Event Categories</div>
+                            <div class="about-feature-list">
+                                <div class="about-feature"><span class="af-icon">🎭</span>Cultural Performances
+                                    (Individual &amp; Group)
+                                </div>
+                                <div class="about-feature"><span class="af-icon">🧠</span>Quiz Competition (Team of 2)
+                                </div>
+                                <div class="about-feature"><span class="af-icon">🎨</span>Rangoli Art Competition</div>
+                                <div class="about-feature"><span class="af-icon">📱</span>Instagram Reels Challenge
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deadline-banner">
+                            <div class="deadline-banner-label">Register By</div>
+                            <div class="deadline-banner-date">01 April 2026</div>
+                            <div class="deadline-banner-sub">Via Email or WhatsApp</div>
+                        </div>
+                        <button class="btn btn-primary" data-page="events" style="width:100%;justify-content:center">🔥
+                            Explore All
+                            Events</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: ABOUT COLLEGE ═══ -->
+    <div class="page" id="about-college">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">About the Institution</div>
+                <h1 class="page-hero-title">Sri Dhavala College</h1>
+                <p class="page-hero-desc">Established 1965 · Moodabidri, Karnataka · Mangalore University Affiliated</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="about-layout">
+                    <div class="about-prose reveal">
+                        <p>Sri Dhavala College was established in <strong>1965</strong> by the Sri Dhavala Education
+                            Trust with the
+                            vision of providing accessible and quality education to students from rural and
+                            disadvantaged communities
+                            in and around Moodabidri. Since its inception, the institution has remained committed to
+                            empowering young
+                            minds through education, values, and disciplined learning.</p>
+                        <p>The college was founded to create opportunities for students who may not otherwise have
+                            access to higher
+                            education. Along with academic excellence, the institution places strong emphasis on
+                            <strong>character
+                                development, moral values, and discipline</strong>, helping students grow into
+                            responsible and confident
+                            individuals.</p>
+                        <p>Over the decades, Sri Dhavala College has evolved into one of the leading pre-university
+                            institutions in
+                            the state, widely recognised for consistent academic achievements, dedicated faculty, and a
+                            supportive
+                            learning environment.</p>
+                        <p>With a legacy spanning several decades, the college continues to uphold its mission of
+                            delivering quality
+                            education while <strong>nurturing talent, integrity, and leadership</strong> among its
+                            students.</p>
+                        <div style="margin-top:1.5rem"><a href="https://dhavala.edu.in" target="_blank"
+                                class="btn btn-primary">🌐
+                                Visit Official Website</a></div>
+                    </div>
+                    <div class="about-sidebar reveal reveal-l">
+                        <div class="about-stat-grid">
+                            <div class="about-stat">
+                                <div class="about-stat-val">1965</div>
+                                <div class="about-stat-lbl">Founded</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">60+</div>
+                                <div class="about-stat-lbl">Years Legacy</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">MDB</div>
+                                <div class="about-stat-lbl">Moodabidri</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-val">MU</div>
+                                <div class="about-stat-lbl">Affiliated</div>
+                            </div>
+                        </div>
+                        <div class="about-panel">
+                            <div class="about-panel-title">College Values</div>
+                            <div class="about-feature-list">
+                                <div class="about-feature"><span class="af-icon">📖</span>Academic Excellence</div>
+                                <div class="about-feature"><span class="af-icon">🤝</span>Character Development &amp;
+                                    Moral Values</div>
+                                <div class="about-feature"><span class="af-icon">🌱</span>Empowering Rural Communities
+                                </div>
+                                <div class="about-feature"><span class="af-icon">🏛️</span>Leadership &amp; Integrity
+                                </div>
+                                <div class="about-feature"><span class="af-icon">💡</span>Quality Accessible Education
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-panel" style="text-align:center">
+                            <div class="about-panel-title">Quick Info</div>
+                            <p style="font-size:.88rem;color:var(--text-dim);line-height:1.7">Managed by Sri Dhavala
+                                Education Trust.
+                                Located in Moodabidri — the Town of 1000 Jain Temples — in Dakshina Kannada, Karnataka.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: GENERAL RULES ═══ -->
+    <div class="page" id="general-rules">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">Competition Guidelines</div>
+                <h1 class="page-hero-title">General Rules</h1>
+                <p class="page-hero-desc">Rules applicable to all participants and teams across all events. Additional
+                    event-specific rules are available on the Events page.</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="grules-list">
+                    <div class="grule reveal">
+                        <div class="grule-num">01</div>
+                        <div class="grule-text"><strong>No Entry Fee</strong> — There is no entry fee for any
+                            competition at Dhavala
+                            Siri.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">02</div>
+                        <div class="grule-text"><strong>Eligibility</strong> — Participation is limited only to Degree
+                            and PG
+                            Colleges affiliated with <strong>Mangalore University</strong>.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">03</div>
+                        <div class="grule-text"><strong>One Team Per College</strong> — Only one team per college is
+                            allowed to
+                            participate in the cultural performance event.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">04</div>
+                        <div class="grule-text"><strong>Team Size</strong> — Minimum <strong>6 members</strong> and
+                            maximum
+                            <strong>16 members</strong> for cultural events.
+                        </div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">05</div>
+                        <div class="grule-text"><strong>Theme Compliance</strong> — All performances must be based on
+                            the
+                            <strong>main theme</strong> of Dhavala Siri.
+                        </div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">06</div>
+                        <div class="grule-text"><strong>Time Limit</strong> — 20 minutes for performance + 5 min setup +
+                            5 min
+                            clear. <strong>Performances exceeding time will not be evaluated.</strong></div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">07</div>
+                        <div class="grule-text"><strong>Cultural Sensitivity</strong> — Performances must not disrespect
+                            religion,
+                            caste, or cultural practices of <strong>Tulu Nadu</strong>.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">08</div>
+                        <div class="grule-text"><strong>Evaluation</strong> — Judges assess Creativity, Activity,
+                            Presentation, and
+                            Costumes.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">09</div>
+                        <div class="grule-text"><strong>Technical Media</strong> — CD or pen drive allowed; live
+                            performance also
+                            permitted. Test media before the event. Organisers not responsible for technical issues.
+                        </div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">10</div>
+                        <div class="grule-text"><strong>Registration Deadline</strong> — Teams must send names via
+                            <strong>Email or
+                                WhatsApp on or before 01-04-2026</strong>.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">11</div>
+                        <div class="grule-text"><strong>Facilities</strong> — Only basic lighting and microphone
+                            facilities will be
+                            provided.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">12</div>
+                        <div class="grule-text"><strong>Meals</strong> — Participants will be provided <strong>breakfast
+                                and
+                                lunch</strong> on the event day.</div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">13</div>
+                        <div class="grule-text"><strong>Identification</strong> — Carry your <strong>College ID
+                                Card</strong> and a
+                            <strong>confirmation letter from the Principal</strong>.
+                        </div>
+                    </div>
+                    <div class="grule reveal">
+                        <div class="grule-num">14</div>
+                        <div class="grule-text"><strong>Judges' Decision</strong> — The decision of the judges is
+                            <strong>final and
+                                binding</strong> across all events.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: LOCATION ═══ -->
+    <div class="page" id="location">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">Venue</div>
+                <h1 class="page-hero-title">Find Us</h1>
+                <p class="page-hero-desc">Sri Dhavala College, Moodabidri, Dakshina Kannada, Karnataka — the Town of
+                    1000 Jain
+                    Temples.</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="college-info-grid reveal">
+                    <div class="college-info-item"><span class="college-info-icon">🏛️</span>
+                        <div>
+                            <div class="college-info-label">Venue</div>
+                            <div class="college-info-val">Sri Dhavala College</div>
+                        </div>
+                    </div>
+                    <div class="college-info-item"><span class="college-info-icon">📍</span>
+                        <div>
+                            <div class="college-info-label">City / District</div>
+                            <div class="college-info-val">Moodabidri, Dakshina Kannada</div>
+                        </div>
+                    </div>
+                    <div class="college-info-item"><span class="college-info-icon">🗺️</span>
+                        <div>
+                            <div class="college-info-label">State</div>
+                            <div class="college-info-val">Karnataka, India</div>
+                        </div>
+                    </div>
+                    <div class="college-info-item"><span class="college-info-icon">🌐</span>
+                        <div>
+                            <div class="college-info-label">Website</div>
+                            <div class="college-info-val"><a href="https://dhavala.edu.in"
+                                    target="_blank">dhavala.edu.in</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-frame reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31073!2d74.9888!3d13.0669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca8eba3fef5ad%3A0x8b7b0e8d0e4a5a3c!2sMoodabidri%2C+Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Moodabidri Karnataka"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══ PAGE: CONTACT ═══ -->
+    <div class="page" id="contact">
+        <div class="page-hero">
+            <div class="page-hero-inner">
+                <div class="page-hero-kicker">Get In Touch</div>
+                <h1 class="page-hero-title">Contact &amp; Coordinators</h1>
+                <p class="page-hero-desc">Reach out to our event coordinators for registration, queries, or any
+                    assistance.</p>
+            </div>
+        </div>
+        <section class="section">
+            <div class="section-inner">
+                <div class="contact-layout">
+                    <div class="contact-card reveal">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">🎭</div>
+                            <div class="contact-card-title">Cultural Performance</div>
+                        </div>
+                        <div class="contact-card-body">
+                            <div class="person-row">
+                                <div class="person-role">Student Coordinator</div>
+                                <div class="person-name">Prajwal P. Poojary</div>
+                                <div class="person-contacts"><a href="tel:8549991566" class="person-contact-link">📞
+                                        8549991566</a><a href="mailto:prajwalpoojary046@gmail.com"
+                                        class="person-contact-link">✉️ Email</a></div>
+                            </div>
+                            <div class="person-row">
+                                <div class="person-role">Student Coordinator</div>
+                                <div class="person-name">Sushanth</div>
+                                <div class="person-contacts"><a href="tel:6364242502" class="person-contact-link">📞
+                                        6364242502</a>
+                                </div>
+                            </div>
+                            <div class="person-row">
+                                <div class="person-role">Faculty Coordinator</div>
+                                <div class="person-name">Mrs. Mallika Rao</div>
+                                <div class="person-contacts"><a href="tel:9945249401" class="person-contact-link">📞
+                                        9945249401</a><a href="mailto:mallikarao3642@gmail.com"
+                                        class="person-contact-link">✉️ Email</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem">
+                        <div class="contact-card reveal reveal-l">
+                            <div class="contact-card-header">
+                                <div class="contact-card-icon">🧠</div>
+                                <div class="contact-card-title">Quiz Competition</div>
+                            </div>
+                            <div class="contact-card-body">
+                                <div class="person-row">
+                                    <div class="person-role">Student Coordinator</div>
+                                    <div class="person-name">Shodhan D. Nayak</div>
+                                    <div class="person-contacts"><a href="tel:8105594323" class="person-contact-link">📞
+                                            8105594323</a>
+                                    </div>
+                                </div>
+                                <div class="person-row">
+                                    <div class="person-role">Faculty Coordinator</div>
+                                    <div class="person-name">Taranath K.</div>
+                                    <div class="person-contacts"><a href="tel:9008045375" class="person-contact-link">📞
+                                            9008045375</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card reveal reveal-ll">
+                            <div class="contact-card-header">
+                                <div class="contact-card-icon">🎨</div>
+                                <div class="contact-card-title">Rangoli Competition</div>
+                            </div>
+                            <div class="contact-card-body">
+                                <div class="person-row">
+                                    <div class="person-role">Student Coordinator</div>
+                                    <div class="person-name">K. Sanjana</div>
+                                    <div class="person-contacts"><a href="tel:6364497487" class="person-contact-link">📞
+                                            6364497487</a>
+                                    </div>
+                                </div>
+                                <div class="person-row">
+                                    <div class="person-role">Faculty Coordinator</div>
+                                    <div class="person-name">Mrs. Akshata Marathe</div>
+                                    <div class="person-contacts"><a href="tel:9008926200" class="person-contact-link">📞
+                                            9008926200</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card reveal reveal-lll">
+                            <div class="contact-card-header">
+                                <div class="contact-card-icon">📱</div>
+                                <div class="contact-card-title">Instagram Reels</div>
+                            </div>
+                            <div class="contact-card-body">
+                                <div class="person-row">
+                                    <div class="person-role">Student Coordinator</div>
+                                    <div class="person-name">Sameeth</div>
+                                    <div class="person-contacts"><a href="tel:8296543236" class="person-contact-link">📞
+                                            8296543236</a>
+                                    </div>
+                                </div>
+                                <div class="person-row">
+                                    <div class="person-role">Faculty Coordinator</div>
+                                    <div class="person-name">Sri Suprith Kotian</div>
+                                    <div class="person-contacts"><a href="tel:8762358183" class="person-contact-link">📞
+                                            8762358183</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:2rem" class="reveal">
+                    <div
+                        style="font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:var(--amber);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem">
+                        <span>🏛️</span>Sri Dhavala College
+                    </div>
+                    <div class="college-info-grid">
+                        <div class="college-info-item"><span class="college-info-icon">📍</span>
+                            <div>
+                                <div class="college-info-label">Address</div>
+                                <div class="college-info-val">Moodabidri, Dakshina Kannada, Karnataka</div>
+                            </div>
+                        </div>
+                        <div class="college-info-item"><span class="college-info-icon">🌐</span>
+                            <div>
+                                <div class="college-info-label">Website</div>
+                                <div class="college-info-val"><a href="https://dhavala.edu.in"
+                                        target="_blank">dhavala.edu.in</a></div>
+                            </div>
+                        </div>
+                        <div class="college-info-item"><span class="college-info-icon">📅</span>
+                            <div>
+                                <div class="college-info-label">Registration Deadline</div>
+                                <div class="college-info-val">01 April 2026</div>
+                            </div>
+                        </div>
+                        <div class="college-info-item"><span class="college-info-icon">📸</span>
+                            <div>
+                                <div class="college-info-label">Instagram</div>
+                                <div class="college-info-val"><a href="https://instagram.com/sri_dhavala_college_mdb"
+                                        target="_blank">@sri_dhavala_college_mdb</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem">
+                    <div class="nav-flame-icon" style="width:36px;height:36px;flex-shrink:0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            style="color:#FFB300;width:18px;height:18px;position:relative;z-index:1">
+                            <path
+                                d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="nav-wordmark-main">Dhavala Siri</div>
+                        <div class="nav-wordmark-sub">Sri Dhavala College · 2025–26</div>
+                    </div>
+                </div>
+                <p class="footer-brand-desc">A vibrant cultural and creative fest celebrating talent, creativity, and
+                    collaboration among Mangalore University's finest students.</p>
+            </div>
+            <div>
+                <div class="footer-col-h">Navigate</div>
+                <ul class="footer-nav-list">
+                    <li><span data-page="home">Home</span></li>
+                    <li><span data-page="events">Events</span></li>
+                    <li><span data-page="general-rules">General Rules</span></li>
+                    <li><span data-page="location">Location</span></li>
+                    <li><span data-page="contact">Contact</span></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-h">About</div>
+                <ul class="footer-nav-list">
+                    <li><span data-page="about-fest">About the Fest</span></li>
+                    <li><span data-page="about-college">About College</span></li>
+                    <li><a href="https://dhavala.edu.in" target="_blank">College Website ↗</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-h">Quick Contact</div>
+                <ul class="footer-nav-list">
+                    <li><a href="tel:8549991566">📞 Prajwal (Cultural)</a></li>
+                    <li><a href="tel:8105594323">📞 Shodhan (Quiz)</a></li>
+                    <li><a href="tel:6364497487">📞 Sanjana (Rangoli)</a></li>
+                    <li><a href="tel:8296543236">📞 Sameeth (Reels)</a></li>
+                    <li><a href="https://instagram.com/sri_dhavala_college_mdb" target="_blank">📸 Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025–26 Sri Dhavala College, Moodabidri. All rights reserved.</span>
+            <span>Dhavala Siri — Celebrating Culture &amp; Talent 🔥</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
