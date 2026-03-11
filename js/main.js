@@ -1,4 +1,4 @@
-III/* ═══════════════════════════════════════
+/* ═══════════════════════════════════════
    DHAVALA SIRI — Main JS
 ═══════════════════════════════════════ */
 
@@ -282,7 +282,7 @@ const eventData = {
       </div>
       <div class="m-section">Coordinators</div>
       <div class="modal-coord-grid">
-        ${coordCard('Student Coordinator','Shodhan D. Naik','8105594323','')}
+        ${coordCard('Student Coordinator','Shodhan D. Nayak','8105594323','')}
         ${coordCard('Faculty Coordinator','Taranath K.','9008045375','')}
       </div>`
   },
@@ -337,7 +337,7 @@ const eventData = {
       </div>
       <div class="m-section">Coordinators</div>
       <div class="modal-coord-grid">
-        ${coordCard('Student Coordinator','Samith','8296543236','')}
+        ${coordCard('Student Coordinator','Sameeth','8296543236','')}
         ${coordCard('Faculty Coordinator','Sri Suprith Kotian','8762358183','')}
       </div>`
   }
